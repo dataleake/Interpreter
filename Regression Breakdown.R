@@ -9,6 +9,9 @@
 #
 #
 library(ISLR)
+library(MASS)
+
+data(Boston)
 data(Auto)
 
 Regression <- function(dataset = Auto, outcome = 1, predictor = 3, pred2 = NULL) {
@@ -38,6 +41,8 @@ Regression <- function(dataset = Auto, outcome = 1, predictor = 3, pred2 = NULL)
         
         print(noquote(paste("You selected number", x, "which is", output[x,2])))
         message(noquote(paste("Retrieving", paste0(output[x, 2], "..."))))
+        # Input a function that will take output as arg
+        # Will use arg, go to stats[[x]] interpret it, and return it all here
         return(stats[[x]])
         
         } else {
